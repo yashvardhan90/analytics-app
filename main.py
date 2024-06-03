@@ -17,7 +17,8 @@ async def check():
     return 'hello'
 
 origins = [
-    "https://yasharma.xyz"
+    "https://yasharma.xyz",
+    "http://localhost:1313/"
 ]
 
 app.add_middleware(
