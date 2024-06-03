@@ -93,7 +93,11 @@ async def track(url: str, db:db_dependency, request: Request, user_agent: Annota
 
     db_visit = models.Visit(**visit_data)
     db.add(db_visit)
-    db.commit()
+    try:
+        db.commit()
+    except Exception as e:
+        print(f"Database error: {e}")
+    raise
     db.refresh(db_visit)
     return db_visit
 
