@@ -39,8 +39,8 @@ class VisitBase(BaseModel):
 
 class VisitModel(VisitBase):
     id: int
-    class Config:
-        orm_mode = True
+    # class Config:
+    #     orm_mode = True
 
 class VisitLocked(BaseModel):
     url: str
